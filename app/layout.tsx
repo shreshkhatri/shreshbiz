@@ -34,18 +34,20 @@ export const metadata: Metadata = {
       : `http://localhost:${process.env.PORT || 3000}`
   ),
   title: {
-    template: " %s | Shresh Biz Inc",
-    absolute: "Home | Shresh Biz Inc",
-    default: "Shresh Biz Inc"
+    template: " %s | Shresh Biz",
+    absolute: "Home | Shresh Biz",
+    default: "Shresh Biz "
   },
-  description: "NextJS powered web portal for Shresh Biz Inc",
+  description: "An official website for Shresh Biz. Shresh Biz is a Nepalese IT and software company. The company provides services such as all types of web application development, digital marking, media managemnet, web hosting and domain purchasing and support service for the existing web application and resources.",
   alternates: {
     canonical: "/"
   },
   keywords: [
-    "Hoque Consultancy",
-    "Hoque portal",
-    "Hoque educational consultancy"
+    "Shresh Biz",
+    "Shresh Biz IT company",
+    "Web application development",
+    "digital marketing",
+    "IT service provider"
   ]
 };
 

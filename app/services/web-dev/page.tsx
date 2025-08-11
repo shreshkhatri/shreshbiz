@@ -1,20 +1,20 @@
-import { FaqSection } from "@/components/sections/faq-section"
+import WebDev from "@/components/web-dev"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'FAQs',
+  title: 'Web Dev',
   description:
-    "FAQs page for Shresh Biz",
+    "Wev Dev page for Shresh Biz",
   alternates: {
     canonical: "/"
   },
-  keywords:["Shresh Biz","Shresh Biz FAQs ","Digital Marketing Shresh biz", "shresh biz web dev"]
+  keywords:["Shresh Biz services","Digital Marketing Shresh biz", "shresh biz web dev"]
 };
 
 export default function ServicesPage() {
   return (
     <main className="flex flex-col items-center relative">
-      <FaqSection />
+      <WebDev />
     </main>
   )
 }

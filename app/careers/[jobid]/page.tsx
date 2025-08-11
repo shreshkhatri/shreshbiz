@@ -1,6 +1,18 @@
 import { MouseGlow } from "@/components/ui-library/effects/mouse-glow"
 import JobDetailPage from "@/components/jobdetails"
-import { FC } from 'react';
+import CareersPage from "@/components/careers"
+
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'Job Description',
+  description:
+    "Vacancy details for the rolw at Shresh Biz",
+  alternates: {
+    canonical: "/"
+  },
+  keywords:["Shresh Biz ","Shresh Biz Career ","Shresh Biz jobs","Shresh Biz Contact","Digital Marketing Shresh biz", "shresh biz web dev"]
+};
 
 interface PageProps {
   params: { jobid: string };

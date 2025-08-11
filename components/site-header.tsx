@@ -68,7 +68,7 @@ export function SiteHeader() {
           {/* Desktop CTA Buttons - Hidden on mobile */}
           <div className="hidden md:flex items-center space-x-2">
             <Button variant="ghost" size="sm" className="neumorphic-button" asChild>
-              <Link href="#login">Sign in</Link>
+              <Link href="/auth/signin">Sign in</Link>
             </Button>
             <Button size="sm" className="neumorphic-button-primary" asChild>
               <Link href="#register">
@@ -146,7 +146,7 @@ export function SiteHeader() {
               <div className="mt-auto p-4 border-t border-border">
                 <div className="grid grid-cols-2 gap-3">
                   <Button variant="outline" className="w-full" asChild>
-                    <Link href="#login" onClick={closeMobileMenu}>
+                    <Link href="/auth/signin" onClick={closeMobileMenu}>
                       Sign in
                     </Link>
                   </Button>

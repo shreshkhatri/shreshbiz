@@ -1,6 +1,18 @@
 import { MouseGlow } from "@/components/ui-library/effects/mouse-glow"
 import CareersPage from "@/components/careers"
 
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'Careers',
+  description:
+    "Career and Job opportunities page for Shresh Biz",
+  alternates: {
+    canonical: "/"
+  },
+  keywords:["Shresh Biz ","Shresh Biz Career ","Shresh Biz jobs","Shresh Biz Contact","Digital Marketing Shresh biz", "shresh biz web dev"]
+};
+
 export default function CareerPage() {
   return (
     <main className="flex flex-col items-center relative">

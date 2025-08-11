@@ -73,7 +73,7 @@ export function SiteFooter() {
               <ul className="flex flex-col gap-2">
                 <li>
                   <Link
-                    href="#features"
+                    href="/services/web-dev"
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground opacity-70"
                   >
                     Web devlopment
