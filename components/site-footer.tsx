@@ -171,7 +171,7 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <p className="text-sm text-muted-foreground opacity-70">
-            &copy; {new Date().getFullYear()} ComponentCraft. All rights
+            &copy; {new Date().getFullYear()} Shresh Biz. All rights
             reserved.
           </p>
           <div className="flex gap-4">

@@ -37,7 +37,7 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "fixed top-0 z-30 w-full transition-all duration-300"
+        "fixed top-0 z-30 w-full transition-all duration-300 bg-background/90 border-b border-border/40"
       )}
     >
       <div className="container px-4 md:px-6 flex h-16 items-center justify-between">
@@ -118,14 +118,15 @@ export function SiteHeader() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 z-50 bg-background/50 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 z-40 bg-background/50 backdrop-blur-sm md:hidden"
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
+            onClick={closeMobileMenu}
           >
             <motion.div
-              className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-background shadow-xl border-l border-border "
+              className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-background shadow-xl border-l border-border"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -155,7 +156,7 @@ export function SiteHeader() {
                 </button>
               </div>
 
-              <div className="py-4 px-2 ">
+              <div className="py-4 px-2">
                 <nav className="flex flex-col space-y-1">
                   {navItems.map((item) => (
                     <Link

@@ -6,7 +6,7 @@ import { Code, Globe, ShoppingCart, GraduationCap, Settings, Cloud, Server, Layo
 
 export default function WebDev() {
   return (
-    <main className="flex min-h-screen flex-col items-center py-12 md:py-24 lg:py-32 section-spacing relative overflow-hidden">
+    <main className="flex min-h-screen flex-col items-center py-24 lg:py-32 section-spacing relative overflow-hidden">
       {/* Background Grid/Pattern (Conceptual - adjust with actual CSS if needed) */}
       
 
