@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { Icons } from "@/components/icons"
-import { ScrollToTopButton } from "@/components/scroll-to-top-button"
+import Link from "next/link";
+import Image from "next/image";
+import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 
 export function SiteFooter() {
   return (
@@ -9,29 +9,52 @@ export function SiteFooter() {
         <div className="flex flex-col gap-10 md:flex-row">
           <div className="flex flex-1 flex-col gap-4">
             <Link href="/" className="flex items-center gap-2">
-              <Icons.logo className="h-6 w-6" />
-              <span className="font-heading text-xl tracking-tight">Shresh Biz</span>
+              <Image
+                src="/logo.svg" // logo path in public folder
+                alt="Shresh Biz Company Logo"
+                width={50}
+                height={50}
+                priority
+              />
+              <span className="font-heading text-xl tracking-tight">
+                Shresh Biz
+              </span>
             </Link>
             <p className="text-muted-foreground max-w-sm opacity-70">
               Your digital partner for progress
             </p>
             <div className="flex gap-4">
-              <Link href="https://twitter.com" target="_blank" rel="noreferrer" className="glassmorphic-icon">
+              <Link
+                href="https://twitter.com"
+                target="_blank"
+                rel="noreferrer"
+                className="glassmorphic-icon"
+              >
                 <Icons.twitter className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="https://github.com" target="_blank" rel="noreferrer" className="glassmorphic-icon">
+              <Link
+                href="https://github.com"
+                target="_blank"
+                rel="noreferrer"
+                className="glassmorphic-icon"
+              >
                 <Icons.gitHub className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
                 <span className="sr-only">GitHub</span>
               </Link>
-              <Link href="https://discord.com" target="_blank" rel="noreferrer" className="glassmorphic-icon">
+              <Link
+                href="https://discord.com"
+                target="_blank"
+                rel="noreferrer"
+                className="glassmorphic-icon"
+              >
                 <Icons.discord className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
                 <span className="sr-only">Discord</span>
               </Link>
             </div>
           </div>
           <div className="grid flex-1 grid-cols-2 gap-10 sm:grid-cols-3">
-           <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2">
               <h3 className="text-sm font-medium tracking-tight">Company</h3>
               <ul className="flex flex-col gap-2">
                 <li>
@@ -105,7 +128,7 @@ export function SiteFooter() {
                 </li>
               </ul>
             </div>
-            
+
             <div className="flex flex-col gap-2">
               <h3 className="text-sm font-medium tracking-tight">Legal</h3>
               <ul className="flex flex-col gap-2">
@@ -147,7 +170,8 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <p className="text-sm text-muted-foreground opacity-70">
-            &copy; {new Date().getFullYear()} ComponentCraft. All rights reserved.
+            &copy; {new Date().getFullYear()} ComponentCraft. All rights
+            reserved.
           </p>
           <div className="flex gap-4">
             <Link
@@ -167,5 +191,5 @@ export function SiteFooter() {
       </div>
       <ScrollToTopButton />
     </footer>
-  )
+  );
 }
