@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Icons } from "@/components/icons";
 import Image from "next/image";
 import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 
