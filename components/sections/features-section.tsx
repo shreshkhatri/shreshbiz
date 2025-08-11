@@ -1,5 +1,5 @@
 "use client"
-import { Code, Globe, Briefcase, GraduationCap, Server } from "lucide-react"
+import { Cctv, Globe, Briefcase, GraduationCap, Server } from "lucide-react"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ScrollReveal } from "@/components/scroll-reveal"
@@ -39,6 +39,13 @@ const services = [
       borderClass: "border-glow-yellow",
     },
     {
+      icon: <Cctv className="h-10 w-10 text-gray-500" />,
+      title: "CCTV Service set up",
+      description: "Need to secure your premises with CC(Closed Circuit) TV camera ? Experts at Shresh Biz are ready to provide you proper CCTV set up.",
+      progress: 95,
+      borderClass: "border-glow-yellow",
+    },
+    {
       icon: <GraduationCap className="h-10 w-10 text-yellow-500" />,
       title: "Long Term Support (LTS)",
       description: "Looking forward to receive continuous support from us for maintaneing your application system or any of your business needs ? We are ready to provide you the necessary support with the affordable and convient service plans.",
@@ -51,7 +58,7 @@ export function ServicesSection() {
 
 
   return (
-    <section id="services" className="relative w-full py-12 md:py-24 lg:py-32 bg-muted/30 overflow-hidden">
+    <section id="services" className="relative w-full py-24 lg:py-32 bg-muted/30 overflow-hidden">
       <AnimatedBackground variant="dots" color="rgba(220, 38, 38, 0.05)" />
 
       <div className="container px-6 md:px-8">

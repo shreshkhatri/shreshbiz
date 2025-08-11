@@ -7,7 +7,7 @@ import { ScrollReveal } from "@/components/scroll-reveal" // Import ScrollReveal
 
 export default function AboutUsPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center section-spacing">
+    <main className="flex min-h-screen flex-col items-center section-spacing py-24 z-0">
       {/* Hero Section - No ScrollReveal needed here as it's usually visible on load */}
       <section className="container-padding max-w-6xl mx-auto text-center space-y-6">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl gradient-text">About Shresh Biz</h1>

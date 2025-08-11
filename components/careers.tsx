@@ -67,7 +67,7 @@ const jobOpenings: Job[] = [
 
 export default function CareersPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center py-12 md:py-24 lg:py-32 section-spacing">
+    <main className="flex min-h-screen flex-col items-center py-24 lg:py-32 section-spacing">
       <div className="container-padding max-w-6xl mx-auto text-center space-y-6">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl gradient-text">Join Our Team</h1>
         <p className="text-lg text-muted-foreground md:text-xl">

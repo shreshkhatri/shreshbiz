@@ -73,12 +73,7 @@ const jobOpenings: Job[] = [
   },
 ];
 
-export default function JobDetailPage({
-  jobid,
-}: {
-  jobid: string 
-}) {
-
+export default function JobDetailPage({ jobid }: { jobid: string }) {
   const job = jobOpenings.find((j) => j.id == jobid);
 
   if (!job) {
@@ -102,51 +97,51 @@ export default function JobDetailPage({
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center py-12 md:py-24 lg:py-32 section-spacing">
-      <ScrollReveal> 
-      <div className="container-padding max-w-4xl mx-auto space-y-8">
-        <Link href="/careers">
-          <Button
-            variant="outline"
-            className="mb-6 glassmorphic-button-outline bg-transparent"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Careers
-          </Button>
-        </Link>
-
-        <Card className="glassmorphic-card p-6 md:p-8">
-          <CardHeader className="pb-4">
-            <CardTitle className="text-3xl font-bold tracking-tight">
-              {job.title}
-            </CardTitle>
-            <CardDescription className="flex items-center gap-2 text-muted-foreground text-lg">
-              {job.location === "On-site" ? (
-                <MapPin className="h-5 w-5" />
-              ) : (
-                <Laptop className="h-5 w-5" />
-              )}
-              {job.location}
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="flex flex-wrap gap-2 mb-4">
-              <Badge variant="secondary" className="text-base px-3 py-1">
-                {job.type}
-              </Badge>
-            </div>
-            <h3 className="text-2xl font-semibold tracking-tight">
-              Job Description
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              {job.description}
-            </p>
-            {/* Add more job details here if available */}
-            <Button className="w-full mt-6 neumorphic-button-primary">
-              Apply Now
+    <main className="flex min-h-screen flex-col items-center py-24 lg:py-32 section-spacing">
+      <ScrollReveal>
+        <div className="container-padding max-w-4xl mx-auto space-y-8">
+          <Link href="/careers">
+            <Button
+              variant="outline"
+              className="mb-6 glassmorphic-button-outline bg-transparent"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Careers
             </Button>
-          </CardContent>
-        </Card>
-      </div>
+          </Link>
+
+          <Card className="glassmorphic-card p-6 md:p-8">
+            <CardHeader className="pb-4">
+              <CardTitle className="text-3xl font-bold tracking-tight">
+                {job.title}
+              </CardTitle>
+              <CardDescription className="flex items-center gap-2 text-muted-foreground text-lg">
+                {job.location === "On-site" ? (
+                  <MapPin className="h-5 w-5" />
+                ) : (
+                  <Laptop className="h-5 w-5" />
+                )}
+                {job.location}
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="flex flex-wrap gap-2 mb-4">
+                <Badge variant="secondary" className="text-base px-3 py-1">
+                  {job.type}
+                </Badge>
+              </div>
+              <h3 className="text-2xl font-semibold tracking-tight">
+                Job Description
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {job.description}
+              </p>
+              {/* Add more job details here if available */}
+              <Button className="w-full mt-6 neumorphic-button-primary">
+                Apply Now
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
       </ScrollReveal>
     </main>
   );

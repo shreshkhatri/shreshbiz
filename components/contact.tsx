@@ -32,7 +32,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="flex w-full min-h-screen flex-col items-stretch py-12 md:py-24 lg:py-32 section-spacing">
+    <main className="flex w-full min-h-screen flex-col items-stretch py-24 lg:py-32 section-spacing">
       {/* Hero Section */}
       <section className=" container-padding max-w-6xl mx-auto text-center space-y-6 mb-16">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl gradient-text">Get in Touch</h1>

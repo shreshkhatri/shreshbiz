@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     absolute: "Home | Shresh Biz",
     default: "Shresh Biz "
   },
-  description: "An official website for Shresh Biz. Shresh Biz is a Nepalese IT and software company. The company provides services such as all types of web application development, digital marking, media managemnet, web hosting and domain purchasing and support service for the existing web application and resources.",
+  description: "Shresh Biz is an IT and software company. The company provides services such as all types of web application development, digital marking, media managemnet, web hosting and domain purchasing and support service for the existing web application and resources.",
   alternates: {
     canonical: "/"
   },

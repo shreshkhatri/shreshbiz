@@ -42,7 +42,7 @@ export function TestimonialsSection() {
 
 
   return (
-    <section id="testimonials" className="relative w-full py-12 md:py-24 lg:py-32 bg-muted/30 overflow-hidden">
+    <section id="testimonials" className="relative w-full py-24 lg:py-32 bg-muted/30 overflow-hidden">
       <AnimatedBackground variant="waves" color="rgba(220, 38, 38, 0.05)" />
 
       <div className="container px-4 md:px-6">
