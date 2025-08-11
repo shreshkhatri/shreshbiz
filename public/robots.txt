@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Disallow specific paths if you have any private or sensitive areas
+# For example:
+# Disallow: /admin/
+# Disallow: /dashboard/
+# Disallow: /private/
+
+# Specify the path to your sitemap.xml file
+# Replace 'yourdomain.com' with your actual domain.
+Sitemap: https://www.shreshbiz.com/sitemap.xml
