@@ -94,7 +94,7 @@ export function TestimonialsSection() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground opacity-70 group-hover:opacity-100 transition-opacity">
+                    <p className="text-muted-foreground opacity-100 group-hover:opacity-100 transition-opacity">
                       {testimonial.content}
                     </p>
                   </CardContent>

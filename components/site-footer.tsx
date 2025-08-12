@@ -21,7 +21,7 @@ export function SiteFooter() {
                 Shresh Biz
               </span>
             </Link>
-            <p className="text-muted-foreground max-w-sm opacity-70">
+            <p className="text-foreground max-w-sm ">
               Your digital partner for progress
             </p>
             <div className="flex gap-4">
@@ -31,7 +31,7 @@ export function SiteFooter() {
                 rel="noreferrer"
                 className="glassmorphic-icon"
               >
-                <Icons.twitter className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
+                <Icons.twitter className="h-5 w-5 text- foreground transition-colors hover:text-foreground" />
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link
@@ -40,7 +40,7 @@ export function SiteFooter() {
                 rel="noreferrer"
                 className="glassmorphic-icon"
               >
-                <Icons.gitHub className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
+                <Icons.gitHub className="h-5 w-5 text- foreground transition-colors hover:text-foreground" />
                 <span className="sr-only">GitHub</span>
               </Link>
               <Link
@@ -49,7 +49,7 @@ export function SiteFooter() {
                 rel="noreferrer"
                 className="glassmorphic-icon"
               >
-                <Icons.discord className="h-5 w-5 text-muted-foreground transition-colors hover:text-foreground" />
+                <Icons.discord className="h-5 w-5 text- foreground transition-colors hover:text-foreground" />
                 <span className="sr-only">Discord</span>
               </Link>
             </div>
@@ -61,7 +61,7 @@ export function SiteFooter() {
                 <li>
                   <Link
                     href="/about-us"
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground opacity-70"
+                    className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
                   >
                     About
                   </Link>
@@ -69,7 +69,7 @@ export function SiteFooter() {
                 <li>
                   <Link
                     href="#blog"
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground opacity-70"
+                    className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
                   >
                     Blog
                   </Link>
@@ -77,7 +77,7 @@ export function SiteFooter() {
                 <li>
                   <Link
                     href="/careers"
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground opacity-70"
+                    className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
                   >
                     Careers
                   </Link>
@@ -85,7 +85,7 @@ export function SiteFooter() {
                 <li>
                   <Link
                     href="/contact"
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground opacity-70"
+                    className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
                   >
                     Contact
                   </Link>
@@ -98,7 +98,7 @@ export function SiteFooter() {
                 <li>
                   <Link
                     href="/services/web-dev"
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground opacity-70"
+                    className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
                   >
                     Web devlopment
                   </Link>
@@ -106,7 +106,7 @@ export function SiteFooter() {
                 <li>
                   <Link
                     href="#pricing"
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground opacity-70"
+                    className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
                   >
                     Domain purchase
                   </Link>
@@ -114,7 +114,7 @@ export function SiteFooter() {
                 <li>
                   <Link
                     href="#components"
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground opacity-70"
+                    className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
                   >
                     Digital Marketing
                   </Link>
@@ -122,7 +122,7 @@ export function SiteFooter() {
                 <li>
                   <Link
                     href="#changelog"
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground opacity-70"
+                    className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
                   >
                     Maintenance Contract
                   </Link>
@@ -136,7 +136,7 @@ export function SiteFooter() {
                 <li>
                   <Link
                     href="#privacy"
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground opacity-70"
+                    className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
                   >
                     Privacy
                   </Link>
@@ -144,7 +144,7 @@ export function SiteFooter() {
                 <li>
                   <Link
                     href="#terms"
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground opacity-70"
+                    className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
                   >
                     Terms
                   </Link>
@@ -152,7 +152,7 @@ export function SiteFooter() {
                 <li>
                   <Link
                     href="#cookies"
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground opacity-70"
+                    className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
                   >
                     Cookies
                   </Link>
@@ -160,7 +160,7 @@ export function SiteFooter() {
                 <li>
                   <Link
                     href="#licenses"
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground opacity-70"
+                    className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
                   >
                     Licenses
                   </Link>
@@ -170,27 +170,27 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <p className="text-sm text-muted-foreground opacity-70">
+          <p className="text-sm text- foreground opacity-95">
             &copy; {new Date().getFullYear()} Shresh Biz. All rights
             reserved.
           </p>
           <div className="flex gap-4">
             <Link
               href="#terms"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground opacity-70"
+              className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
             >
               Terms
             </Link>
             <Link
               href="#privacy"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground opacity-70"
+              className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
             >
               Privacy
             </Link>
           </div>
         </div>
       </div>
-      <ScrollToTopButton />
+
     </footer>
   );
 }

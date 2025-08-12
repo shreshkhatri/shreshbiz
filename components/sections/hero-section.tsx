@@ -68,14 +68,13 @@ function ElegantShape({
         <div
           className={cn(
             "absolute inset-0 rounded-full",
-            "bg-gradient-to-r to-transparent",
+            "bg-gradient-to-r to-transparent ",
             gradient,
             "backdrop-blur-[2px] ", // Changed border color
             "shadow-[0_8px_32px_0_rgba(0,0,0,0.08)]", // Adjusted shadow for slightly darker shapes
-             "dark:shadow-[0_0_10px_rgba(255,255,255,0.2)]",
+             "dark:shadow-[0_0_3px_rgba(255,255,255,0.8)]",
             "after:absolute after:inset-0 after:rounded-full",
             "after:bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.08),transparent_70%)]", // Adjusted radial gradient
-          
           )}
         />
       </motion.div>
@@ -93,7 +92,7 @@ export default function HeroSection({
   title2?: string
 }) {
 
-    const isMdOrLarger = useMediaQuery("(min-width: 768px)") // Check for medium and larger screens
+  const isMdOrLarger = useMediaQuery("(min-width: 768px)") // Check for medium and larger screens
   
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -119,8 +118,8 @@ export default function HeroSection({
   }
 
   return (
-    <div className="relative w-full flex items-center justify-center overflow-hidden bg-white dark:bg-black">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-200/[0.1] via-transparent to-purple-200/[0.1] blur-3xl" />{" "}
+    <div className="relative w-full flex items-center justify-center overflow-hidden ">
+      <div className=" absolute inset-0 bg-gradient-to-r from-white to-gray-100 dark:from-[#101d3e] dark:via-[#101d3e] dark:to-[#c6baba]" />{" "}
       {/* Adjusted gradient for white background */}
       <div className="absolute inset-0 overflow-hidden">
         <ElegantShape
@@ -138,26 +137,18 @@ export default function HeroSection({
           height={200}
           rotate={-15}
           gradient="from-purple-400/[0.5]" // Changed gradient to darker purple
-          className=" left-[45%] bottom-[-5%]"
-        />
-
-        <ElegantShape
-          delay={0.4}
-          width={150}
-          height={150}
-          rotate={-8}
-          gradient="from-green-400/[0.5]" // Changed gradient to darker green
-          className="hidden left-[75%] bottom-[30%]  md:left-[40%]  md:bottom-[30%]"
+          className="hidden md:block left-[45%] bottom-[-5%]"
         />
 
         <ElegantShape
           delay={0.6}
-          width={1000}
-          height={1000}
+          width={150}
+          height={150}
           rotate={20}
-          gradient="from-yellow-400/[0.5]" // Changed gradient to darker yellow
-          className=" right-[-25%]  top-[-25%]"
+          gradient="from-yellow-400/[0.6]" // Changed gradient to darker yellow
+          className=" right-[25%]  top-[30%]"
         />
+        
 
         <ElegantShape
           delay={0.7}
@@ -165,10 +156,27 @@ export default function HeroSection({
           height={150}
           rotate={-25}
           gradient="from-red-400/[0.5]" // Changed gradient to darker red
-          className="left-[80%] md:left-[35%] top-[15%] md:top-[10%]"
+          className="left-[80%] md:left-[35%] top-[15%] md:top-[10%] z-10"
+        />
+        
+        <ElegantShape
+          delay={0.7}
+          width={150}
+          height={150}
+          rotate={-25}
+          gradient="from-green-400/[0.5]" // Changed gradient to darker red
+          className="hidden md:block right-[15%] md:right-[-1%] bottom-[-5%] md:bottom-[-5%]"
+        />
+        <ElegantShape
+          delay={0.7}
+          width={150}
+          height={150}
+          rotate={-25}
+          gradient="from-cyan-400/[0.5]" // Changed gradient to darker red
+          className="right-[15%] md:right-[0%] top-[0%] md:top-[10%]"
         />
       </div>
-      <div className="relative z-10 container mx-auto px-4 md:px-6">
+      <div className=" relative z-10 container mx-auto px-4 md:px-6">
         <div className="absolute left-[-10%] top-1/2 -translate-y-1/2 text-[15vw] font-extrabold text-gray-200 opacity-5 rotate-90 origin-left select-none pointer-events-none z-0">
         {" "}
         {/* Adjusted text color */}
@@ -179,7 +187,7 @@ export default function HeroSection({
         {/* Adjusted text color */}
         Biz
       </div>
-      <div className="relative z-10 container mx-auto px-4 md:px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 container mx-auto px-4 md:px-6 pt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Content Section */}
         <motion.div
           initial="hidden"
@@ -189,7 +197,7 @@ export default function HeroSection({
         >
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 mt-10 leading-tight">
-            <span className="text-gray-900">Your partner for </span> {/* Changed text color */}
+            <span className="text-gray-900 dark:text-gray-400">Your partner for </span> {/* Changed text color */}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600">
               {" "}
               {/* Darker gradient for white background */}
@@ -197,12 +205,12 @@ export default function HeroSection({
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg text-gray-700 max-w-md">
+          <p className="text-base sm:text-lg text-gray-500 max-w-md">
             {" "}
             {/* Adjusted text color */}
            Reach more people | Grow your brand
           </p>
-          <p className="text-base sm:text-lg text-gray-700 mb-8 max-w-md">
+          <p className="text-base sm:text-lg text-gray-500 mb-8 max-w-md">
             {" "}
             {/* Adjusted text color */}
            And let digital marketing drive your success.

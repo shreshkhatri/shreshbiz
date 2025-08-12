@@ -55,7 +55,7 @@ export function BlogSection() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground opacity-70">{post.description}</p>
+                  <p className="text-muted-foreground opacity-90">{post.description}</p>
                 </CardContent>
                 <CardFooter>
                   <Link

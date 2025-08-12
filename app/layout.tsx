@@ -10,6 +10,7 @@ import { PageTransition } from "@/components/page-transition"
 
 import "@/app/globals.css"
 import { Suspense } from "react"
+import { ScrollToTopButton } from "@/components/scroll-to-top-button"
 
 // Use only Google Fonts to avoid any local font references
 const fontSans = Inter({
@@ -70,7 +71,7 @@ export default function RootLayout({
             <SiteHeader />
             <Suspense>
               <PageTransition>
-                <div className="flex-1">{children}</div>
+                <div className="flex-1">{children}<ScrollToTopButton /></div>
               </PageTransition>
             </Suspense>
             <SiteFooter />

@@ -100,7 +100,7 @@ export function ServicesSection() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <CardDescription className="text-base opacity-70 transition-opacity duration-300 group-hover:opacity-100">
+                      <CardDescription className="text-base opacity-90 transition-opacity duration-300 group-hover:opacity-100">
                         {feature.description}
                       </CardDescription>
                     </CardContent>
