@@ -1,19 +1,18 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Pacifico } from "next/font/google"
-import Image from "next/image"
-import { useMediaQuery } from "@/hooks/use-media-query"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import { AwardItem } from "./award-item"
-import { ArrowRight } from "lucide-react"
+import { motion } from "framer-motion";
+import { Pacifico } from "next/font/google";
+import { useMediaQuery } from "@/hooks/use-media-query";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const pacifico = Pacifico({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-pacifico",
-})
+});
 
 function ElegantShape({
   className,
@@ -23,12 +22,12 @@ function ElegantShape({
   rotate = 0,
   gradient = "from-gray-400/[0.5]", // Changed to a darker gradient
 }: {
-  className?: string
-  delay?: number
-  width?: number
-  height?: number
-  rotate?: number
-  gradient?: string
+  className?: string;
+  delay?: number;
+  width?: number;
+  height?: number;
+  rotate?: number;
+  gradient?: string;
 }) {
   return (
     <motion.div
@@ -72,14 +71,14 @@ function ElegantShape({
             gradient,
             "backdrop-blur-[2px] ", // Changed border color
             "shadow-[0_8px_32px_0_rgba(0,0,0,0.08)]", // Adjusted shadow for slightly darker shapes
-             "dark:shadow-[0_0_3px_rgba(255,255,255,0.8)]",
+            "dark:shadow-[0_0_3px_rgba(255,255,255,0.8)]",
             "after:absolute after:inset-0 after:rounded-full",
-            "after:bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.08),transparent_70%)]", // Adjusted radial gradient
+            "after:bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.08),transparent_70%)]" // Adjusted radial gradient
           )}
         />
       </motion.div>
     </motion.div>
-  )
+  );
 }
 
 export default function HeroSection({
@@ -87,13 +86,12 @@ export default function HeroSection({
   title1 = "Elevate Your",
   title2 = "Digital Vision",
 }: {
-  badge?: string
-  title1?: string
-  title2?: string
+  badge?: string;
+  title1?: string;
+  title2?: string;
 }) {
+  const isMdOrLarger = useMediaQuery("(min-width: 768px)"); // Check for medium and larger screens
 
-  const isMdOrLarger = useMediaQuery("(min-width: 768px)") // Check for medium and larger screens
-  
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
@@ -105,17 +103,25 @@ export default function HeroSection({
         ease: [0.25, 0.4, 0.25, 1],
       },
     }),
-  }
+  };
 
-   const leftVariants = {
+  const leftVariants = {
     hidden: { opacity: 0, x: isMdOrLarger ? -100 : 0 }, // Animate x only on md+
-    visible: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut", delay: 0.3 } },
-  }
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 1, ease: "easeOut", delay: 0.3 },
+    },
+  };
 
   const rightVariants = {
     hidden: { opacity: 0, x: isMdOrLarger ? 100 : 0 }, // Animate x only on md+
-    visible: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut", delay: 0.5 } },
-  }
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 1, ease: "easeOut", delay: 0.5 },
+    },
+  };
 
   return (
     <div className="relative w-full flex items-center justify-center overflow-hidden ">
@@ -148,7 +154,6 @@ export default function HeroSection({
           gradient="from-yellow-400/[0.6]" // Changed gradient to darker yellow
           className=" right-[25%]  top-[30%]"
         />
-        
 
         <ElegantShape
           delay={0.7}
@@ -158,7 +163,7 @@ export default function HeroSection({
           gradient="from-red-400/[0.5]" // Changed gradient to darker red
           className="left-[80%] md:left-[35%] top-[15%] md:top-[10%] z-10"
         />
-        
+
         <ElegantShape
           delay={0.7}
           width={150}
@@ -178,71 +183,70 @@ export default function HeroSection({
       </div>
       <div className=" relative z-10 container mx-auto px-4 md:px-6">
         <div className="absolute left-[-10%] top-1/2 -translate-y-1/2 text-[15vw] font-extrabold text-gray-200 opacity-5 rotate-90 origin-left select-none pointer-events-none z-0">
-        {" "}
-        {/* Adjusted text color */}
-        Shresh 
-      </div>
-      <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 text-[15vw] font-extrabold text-gray-200 opacity-5 -rotate-90 origin-right select-none pointer-events-none z-0">
-        {" "}
-        {/* Adjusted text color */}
-        Biz
-      </div>
-      <div className="relative z-10 container mx-auto px-4 md:px-6 pt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left Content Section */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={leftVariants}
-          className="flex flex-col items-start text-left"
-        >
+          {" "}
+          {/* Adjusted text color */}
+          Shresh
+        </div>
+        <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 text-[15vw] font-extrabold text-gray-200 opacity-5 -rotate-90 origin-right select-none pointer-events-none z-0">
+          {" "}
+          {/* Adjusted text color */}
+          Biz
+        </div>
+        <div className="relative z-10 container mx-auto px-4 md:px-6 pt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content Section */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={leftVariants}
+            className="flex flex-col items-start text-left"
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 mt-10 leading-tight">
+              <span className="text-gray-900 dark:text-gray-400">
+                Your partner for{" "}
+              </span>{" "}
+              {/* Changed text color */}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600">
+                {" "}
+                {/* Darker gradient for white background */}
+                progress
+              </span>
+            </h1>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 mt-10 leading-tight">
-            <span className="text-gray-900 dark:text-gray-400">Your partner for </span> {/* Changed text color */}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600">
+            <p className="text-base sm:text-lg text-gray-500 max-w-md">
               {" "}
-              {/* Darker gradient for white background */}
-              progress
-            </span>
-          </h1>
-
-          <p className="text-base sm:text-lg text-gray-500 max-w-md">
-            {" "}
-            {/* Adjusted text color */}
-           Reach more people | Grow your brand
-          </p>
-          <p className="text-base sm:text-lg text-gray-500 mb-8 max-w-md">
-            {" "}
-            {/* Adjusted text color */}
-           And let digital marketing drive your success.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Button className="px-6 py-3 text-lg font-semibold bg-gray-900 text-white hover:bg-gray-700 transition-colors rounded-lg shadow-lg">
+              {/* Adjusted text color */}
+              Reach more people | Grow your brand
+            </p>
+            <p className="text-base sm:text-lg text-gray-500 mb-8 max-w-md">
               {" "}
-              {/* Adjusted button colors */}
-              Learn More <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              variant="link"
-              className="px-6 py-3 text-gray-700 hover:text-gray-900 transition-colors" // Corrected backslash
-            >
-              View Our Work
-            </Button>
-          </div>
+              {/* Adjusted text color */}
+              And let digital marketing drive your success.
+            </p>
 
-        </motion.div>
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Button className="w-full neumorphic-button-primary" asChild>
+                <Link href="https://web.shreshbiz.com/" target="_blank">
+                  Learn More <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button
+                variant="link"
+                className="px-6 py-3 text-gray-700 hover:text-gray-900 transition-colors" // Corrected backslash
+              >
+                View Our Work
+              </Button>
+            </div>
+          </motion.div>
 
-        {/* Right Placeholder Cards Section */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={rightVariants}
-          className="relative grid grid-cols-2 gap-4 p-4 lg:p-8"
-        >
-        </motion.div>
+          {/* Right Placeholder Cards Section */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={rightVariants}
+            className="relative grid grid-cols-2 gap-4 p-4 lg:p-8"
+          ></motion.div>
+        </div>
       </div>
-      </div>
-    
     </div>
-  )
+  );
 }

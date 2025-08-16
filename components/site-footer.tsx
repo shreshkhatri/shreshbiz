@@ -13,17 +13,11 @@ export function SiteFooter() {
               <Image
                 src="/logo.svg" // logo path in public folder
                 alt="Shresh Biz Company Logo"
-                width={50}
+                width={150}
                 height={50}
                 priority
               />
-              <span className="font-heading text-xl tracking-tight">
-                Shresh Biz
-              </span>
             </Link>
-            <p className="text-foreground max-w-sm ">
-              Your digital partner for progress
-            </p>
             <div className="flex gap-4">
               <Link
                 href="https://twitter.com"
@@ -100,7 +94,7 @@ export function SiteFooter() {
                     href="/services/web-dev"
                     className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
                   >
-                    Web devlopment
+                    Web Services
                   </Link>
                 </li>
                 <li>

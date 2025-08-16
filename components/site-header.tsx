@@ -45,13 +45,10 @@ export function SiteHeader() {
           <Image
             src="/logo.svg" // logo path in public folder
             alt="Shresh Biz Company Logo"
-            width={50}
+            width={150}
             height={50}
             priority
           />
-          <span className="font-heading text-xl tracking-tight">
-            Shresh Biz
-          </span>
         </Link>
 
         {/* Desktop Navigation - Hidden on mobile */}
@@ -82,7 +79,7 @@ export function SiteHeader() {
               <Link href="/auth/signin">Sign in</Link>
             </Button>
             <Button size="sm" className="neumorphic-button-primary" asChild>
-              <Link href="#register">
+              <Link href="https://web.shreshbiz.com/" target="_blank">
                 Get Started
                 <motion.div
                   className="ml-1"
@@ -141,11 +138,10 @@ export function SiteHeader() {
                   <Image
                     src="/logo.svg" // logo path in public folder
                     alt="Shresh Biz Company Logo"
-                    width={50}
+                    width={150}
                     height={50}
                     priority
                   />
-                  <span className="font-heading text-lg">Shresh Biz</span>
                 </Link>
                 <button
                   onClick={closeMobileMenu}
@@ -181,7 +177,7 @@ export function SiteHeader() {
                     </Link>
                   </Button>
                   <Button className="w-full neumorphic-button-primary" asChild>
-                    <Link href="#register" onClick={closeMobileMenu}>
+                    <Link href="https://web.shreshbiz.com/" target="_blank" onClick={closeMobileMenu}>
                       Get Started
                     </Link>
                   </Button>
