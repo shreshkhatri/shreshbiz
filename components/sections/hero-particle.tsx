@@ -131,9 +131,9 @@ function HeroParticlesBackground() {
 
 export default function WebServicesAd() {
   return (
-    <div className="relative">
+    <div className="container mx-auto px-4 py-16 relative z-10">
       <HeroParticlesBackground />{" "}
-      <div className="container mx-auto px-4 py-16 relative z-10">
+     
         {/* Hero Section */}
         <ScrollReveal>
           <section className="text-center max-w-4xl mx-auto">
@@ -173,29 +173,14 @@ export default function WebServicesAd() {
               Explore Now
             </Button>
 
-            {/* Technology Icons Background */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-20">
-              <div className="flex justify-center">
-                <Server className="w-16 h-16 text-[#E4335A]" />
-              </div>
-              <div className="flex justify-center">
-                <Globe className="w-16 h-16 text-[#E4335A]" />
-              </div>
-              <div className="flex justify-center">
-                <Mail className="w-16 h-16 text-[#E4335A]" />
-              </div>
-              <div className="flex justify-center">
-                <Clock className="w-16 h-16 text-[#E4335A]" />
-              </div>
-            </div>
           </section>
         </ScrollReveal>
 
         {/* Social Proof Section */}
         <ScrollReveal>
           <section className="mt-20 text-center">
-            <p className=" mb-8">Trusted by web professionals worldwide</p>
-            <div className="flex justify-center items-center gap-8 opacity-60">
+            <p className="mb-8 font-bold">Trusted by web professionals worldwide</p>
+            <div className="flex flex-col md:flex-row justify-center items-center md:first-letter:gap-8 opacity-60">
               <div className="text-2xl font-bold ">1,00+</div>
               <div className=" ">Active Domains</div>
               <div className="w-px h-8 bg-white/20"></div>
@@ -207,7 +192,7 @@ export default function WebServicesAd() {
             </div>
           </section>
         </ScrollReveal>
-      </div>
+      
     </div>
   );
 }
