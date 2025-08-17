@@ -5,7 +5,8 @@ import { PricingSection } from "@/components/sections/pricing-section"
 import { BlogSection } from "@/components/sections/blog-section"
 import { FaqSection } from "@/components/sections/faq-section"
 import { CtaSection } from "@/components/sections/cta-section"
-import { MouseGlow } from "@/components/ui-library/effects/mouse-glow"
+import WebServicesAd from "@/components/sections/hero-particle"
+
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       
 
       <HeroSection />
+      <WebServicesAd />
       <ServicesSection />
       <TestimonialsSection />
       <BlogSection />
