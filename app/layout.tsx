@@ -49,7 +49,10 @@ export const metadata: Metadata = {
     "Web application development",
     "digital marketing",
     "IT service provider"
-  ]
+  ],
+  icons:{
+    icon:'icon.svg'
+  }
 };
 
 export default function RootLayout({
