@@ -70,14 +70,14 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <ScrollReveal key={index} delay={index * 0.1}>
               <motion.div className="h-full" whileHover={{ y: -5 }} transition={{ type: "spring", stiffness: 300 }}>
-                <Card className="h-full glassmorphic-card group">
+                <Card className="h-full glassmorphic-card group cursor-pointer">
                   <CardHeader>
                     <div className="flex items-center gap-4">
                       <motion.div
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
-                        <Avatar className="glassmorphic-avatar border-2 border-transparent group-hover:border-red-500 transition-colors">
+                        <Avatar className="glassmorphic-avatar border-2 border-transparent group-hover:border-blue-800 transition-colors">
                           <AvatarImage
                             src={`/placeholder.svg?height=40&width=40&text=${testimonial.avatar}`}
                             alt={testimonial.name}
@@ -86,7 +86,7 @@ export function TestimonialsSection() {
                         </Avatar>
                       </motion.div>
                       <div>
-                        <h3 className="text-lg font-medium tracking-tight group-hover:text-red-500 transition-colors">
+                        <h3 className="text-lg font-medium tracking-tight group-hover:text-blue-800 transition-colors">
                           {testimonial.name}
                         </h3>
                         <p className="text-sm text-muted-foreground opacity-70">{testimonial.role}</p>

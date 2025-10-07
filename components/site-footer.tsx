@@ -57,12 +57,20 @@ export function SiteFooter() {
                     href="/about-us"
                     className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
                   >
-                    About
+                    About the company
+                  </Link>
+                </li>
+                  <li>
+                  <Link
+                    href="/the-founder"
+                    className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
+                  >
+                    About the founder
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="#blog"
+                    href="#"
                     className="text-sm text- foreground transition-colors hover:text-foreground opacity-95"
                   >
                     Blog

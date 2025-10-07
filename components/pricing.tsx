@@ -154,7 +154,7 @@ export default function Pricing() {
         <div className="container mx-auto px-4 py-16">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Choose Your <span className="text-[#E4335A]">Perfect Plan</span>
+              Choose Your <span className="text-[#1C3895]">Perfect Plan</span>
             </h1>
             <p className="  max-w-3xl mx-auto">
               From web hosting to digital marketing and custom development - we
@@ -170,9 +170,9 @@ export default function Pricing() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${
+                  className={`eumorphic-button-primary flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${
                     activeTab === tab.id
-                      ? "bg-[#E4335A] text-white"
+                      ? "bg-[#1C3895] text-white"
                       : "outline border-1 hover:underline"
                   }`}
                 >
@@ -190,11 +190,11 @@ export default function Pricing() {
                 <Card
                   key={index}
                   className={`relative ${
-                    plan.popular ? "ring-2 ring-[#E4335A]" : ""
+                    plan.popular ? "ring-2 ring-[#1D3988]" : ""
                   }`}
                 >
                   {plan.popular && (
-                    <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#E4335A] text-white">
+                    <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#1C3895] text-white">
                       Most Popular
                     </Badge>
                   )}
@@ -206,7 +206,7 @@ export default function Pricing() {
                       {plan.description}
                     </CardDescription>
                     <div className="mt-4">
-                      <span className="text-4xl font-bold text-[#E4335A]">
+                      <span className="text-4xl font-bold text-[#1D3988]">
                         {plan.price}
                       </span>
                       {plan.period && (
@@ -221,7 +221,7 @@ export default function Pricing() {
                           key={featureIndex}
                           className="flex items-center gap-3"
                         >
-                          <Check className="w-5 h-5 text-[#E4335A] flex-shrink-0" />
+                          <Check className="w-5 h-5 text-[##D3988] flex-shrink-0" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -229,7 +229,7 @@ export default function Pricing() {
                     <Button
                       className={`w-full ${
                         plan.popular
-                          ? "bg-[#E4335A] hover:bg-[#E4335A]/90"
+                          ? "bg-[#1C3895] hover:bg-[#4B5563]/90 hover:text-white"
                           : "bg-gray-700 hover:bg-gray-600"
                       }`}
                     >
@@ -256,7 +256,7 @@ export default function Pricing() {
                     details about the price and services.
                   </p>
                   <Link href={"https://web.shreshbiz.com"} target="_blank">
-                    <Button className="mt-5 bg-[#E4335A] hover:bg-[#E4335A]/90">
+                    <Button className="mt-5 bg-[#1C3895] hover:bg-[#1B368E]/90">
                       Find More
                     </Button>
                   </Link>
@@ -269,14 +269,14 @@ export default function Pricing() {
           <div className="mt-16 text-center">
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
               <div className="flex flex-col items-center">
-                <Zap className="w-12 h-12 text-[#E4335A] mb-4" />
+                <Zap className="w-12 h-12 text-[#1C3895] mb-4" />
                 <h3 className="  font-semibold mb-2">Fast Setup</h3>
                 <p className="text-gray-400">
                   Get started immediately with our quick setup process.
                 </p>
               </div>
               <div className="flex flex-col items-center">
-                <Mail className="w-12 h-12 text-[#E4335A] mb-4" />
+                <Mail className="w-12 h-12 text-[#1C3895] mb-4" />
                 <h3 className="  font-semibold mb-2">24/7 Support</h3>
                 <p className="text-gray-400">
                   Our expert team is here to help you succeed.
@@ -292,7 +292,7 @@ export default function Pricing() {
                 Every business is unique. Contact us for a personalized quote
                 that fits your specific requirements.
               </p>
-              <Button className="bg-[#E4335A] hover:bg-[#E4335A]/90">
+              <Button className="bg-[#1C3895] hover:bg-[#1B368E]/90">
                 Contact Us for Custom Quote
               </Button>
             </div>

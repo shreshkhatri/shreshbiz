@@ -10,7 +10,7 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 346.8 77.2% 49.8%;
+    --primary:210, 100%, 20%;
     --primary-foreground: 355.7 100% 97.3%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
@@ -24,6 +24,7 @@
     --input: 240 5.9% 90%;
     --ring: 346.8 77.2% 49.8%;
     --radius: 0.75rem;
+
   }
 
   .dark {
@@ -33,7 +34,7 @@
     --card-foreground: 0 0% 95%;
     --popover: 0 0% 9%;
     --popover-foreground: 0 0% 95%;
-    --primary: 346.8 77.2% 49.8%;
+    --primary: 226, 71%, 39%;
     --primary-foreground: 355.7 100% 97.3%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
@@ -158,6 +159,7 @@
 
   .neumorphic-button-primary:hover {
     background-color: hsl(var(--primary));
+    color: hsl(var(--foreground));
     transform: scale(1.03);
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.25), -6px -6px 15px rgba(255, 255, 255, 0.07);
   }
@@ -211,7 +213,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    background-image: linear-gradient(to right, #ef4444, #f87171, #d1d5db);
+    background-image: linear-gradient(to right, #182759, #1D3EAA, #d1d5db);
     background-size: 200% 200%;
     animation: gradientFlow 8s ease infinite;
   }

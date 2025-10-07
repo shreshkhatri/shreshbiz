@@ -39,8 +39,8 @@ export function CtaSection() {
                 glowAmount={5}
                 size="lg"
                 className="px-8 py-3"
-                gradientFrom="from-red-500"
-                gradientTo="to-red-700"
+                gradientFrom="from-blue-900"
+                gradientTo="to-blue-950"
                 asChild
               >
                 <Link href="#pricing" className="flex items-center">

@@ -11,42 +11,42 @@ import { ProgressCard } from "@/components/ui-library/cards/progress-card"
 
 const services = [
     {
-      icon: <Globe className="h-10 w-10 text-red-500" />,
+      icon: <Globe className="h-10 w-10 text-blue-800" />,
       title: "Web Application Development",
       description: "Development of all types of web applications with all sort of backend functionalities.",
       progress: 100,
       borderClass: "border-glow-red",
     },
     {
-      icon: <Server className="h-10 w-10 text-red-500" />,
+      icon: <Server className="h-10 w-10 text-blue-800" />,
       title: "Domain Purchase & Web hosting",
       description: "Need a web domain name for your business and secured web hosting service ? We are here to do it for you on your behalf.",
       progress: 100,
       borderClass: "border-glow-red",
     },
     {
-      icon: <Briefcase className="h-10 w-10 text-blue-500" />,
+      icon: <Briefcase className="h-10 w-10 text-blue-800" />,
       title: "Digital Marketing",
       description: "Building social presence for businesses or startups, marketing media content creation and managing Meta business assets",
       progress: 90,
       borderClass: "border-glow-blue",
     },
     {
-      icon: <GraduationCap className="h-10 w-10 text-yellow-500" />,
+      icon: <GraduationCap className="h-10 w-10 text-blue-800" />,
       title: "eLearning System",
       description: "Development of completely bespoke eLearning solutions development tailored to the need of school, universities and learning institutes",
       progress: 95,
       borderClass: "border-glow-yellow",
     },
     {
-      icon: <Cctv className="h-10 w-10 text-gray-500" />,
+      icon: <Cctv className="h-10 w-10 text-blue-800" />,
       title: "CCTV Service set up",
       description: "Need to secure your premises with CC(Closed Circuit) TV camera ? Experts at Shresh Biz are ready to provide you proper CCTV set up.",
       progress: 95,
       borderClass: "border-glow-yellow",
     },
     {
-      icon: <GraduationCap className="h-10 w-10 text-yellow-500" />,
+      icon: <GraduationCap className="h-10 w-10 text-blue-800" />,
       title: "Long Term Support (LTS)",
       description: "Looking forward to receive continuous support from us for maintaneing your application system or any of your business needs ? We are ready to provide you the necessary support with the affordable and convient service plans.",
       progress: 95,
@@ -86,9 +86,9 @@ export function ServicesSection() {
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((feature, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
-                <GlowingTiltCard className="h-full">
+                <GlowingTiltCard className="h-full cursor-default">
                   <Card
-                    className={` glassmorphic-card border-none overflow-hidden group soft-glow ${feature.borderClass}`}
+                    className={` border-none overflow-hidden group  ${feature.borderClass}`}
                   >
                     <CardHeader>
                       <div className="p-2 rounded-xl w-fit bg-muted/50 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
@@ -100,7 +100,7 @@ export function ServicesSection() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <CardDescription className="text-base opacity-90 transition-opacity duration-300 group-hover:opacity-100">
+                      <CardDescription className="text-base opacity-90 transition-opacity duration-300 group-hover:opacity-100 border-none">
                         {feature.description}
                       </CardDescription>
                     </CardContent>
