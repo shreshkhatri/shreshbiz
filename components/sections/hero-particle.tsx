@@ -1,200 +1,74 @@
-"use client";
+"use client"
 
-import { useEffect, useRef } from "react";
-import { Button } from "@/components/ui/button";
-import { Server, Globe, Mail, Shield, Clock, Headphones } from "lucide-react";
-import { ScrollReveal } from "../scroll-reveal";
-import { AnimatedText } from "../ui/animated-text";
+import { Button } from "@/components/ui/button"
+import { Shield, Headphones, Globe, ArrowRight } from "lucide-react"
+import Link from "next/link"
+import { ScrollReveal } from "../scroll-reveal"
 
-interface Particle {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  size: number;
-  opacity: number;
-}
+const features = [
+  { icon: Shield, label: "99.9% Uptime" },
+  { icon: Headphones, label: "24/7 Support" },
+  { icon: Globe, label: "Easy Domain Management" },
+]
 
-function HeroParticlesBackground() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const particlesRef = useRef<Particle[]>([]);
-  const animationRef = useRef<number>();
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const container = containerRef.current;
-    if (!canvas || !container) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const resizeCanvas = () => {
-      const rect = container.getBoundingClientRect(); //getting the current container in which the Particle will be rendered
-      canvas.width = rect.width;
-      canvas.height = rect.height;
-    };
-
-    const createParticles = () => {
-      const particles: Particle[] = [];
-      const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
-
-      for (let i = 0; i < particleCount; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-          size: Math.random() * 4 + 2,
-          opacity: Math.random() * 0.5 + 0.2,
-        });
-      }
-
-      particlesRef.current = particles;
-    };
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particlesRef.current.forEach((particle) => {
-        // Update position
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-
-        // Wrap around edges
-        if (particle.x < 0) particle.x = canvas.width;
-        if (particle.x > canvas.width) particle.x = 0;
-        if (particle.y < 0) particle.y = canvas.height;
-        if (particle.y > canvas.height) particle.y = 0;
-
-        // Draw particle
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(228, 51, 90, ${particle.opacity})`;
-        ctx.fill();
-      });
-
-      // Draw connections
-      particlesRef.current.forEach((particle, i) => {
-        particlesRef.current.slice(i + 1).forEach((otherParticle) => {
-          const dx = particle.x - otherParticle.x;
-          const dy = particle.y - otherParticle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 100) {
-            ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(228, 51, 90, ${
-              0.1 * (1 - distance / 100)
-            })`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        });
-      });
-
-      animationRef.current = requestAnimationFrame(animate);
-    };
-
-    resizeCanvas();
-    createParticles();
-    animate();
-
-    const resizeObserver = new ResizeObserver(() => {
-      resizeCanvas();
-      createParticles();
-    });
-
-    resizeObserver.observe(container);
-
-    return () => {
-      resizeObserver.disconnect();
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <div
-      ref={containerRef}
-      className="absolute inset-0 pointer-events-none z-0"
-    >
-      <canvas
-        ref={canvasRef}
-        className="w-full h-full"
-        style={{ background: "transparent" }}
-      />
-    </div>
-  );
-}
+const metrics = [
+  { value: "100+", label: "Active Domains" },
+  { value: "99.9%", label: "Uptime" },
+  { value: "24/7", label: "Support" },
+]
 
 export default function WebServicesAd() {
   return (
-    <div className="container mx-auto px-4 py-16 relative z-10">
-      <HeroParticlesBackground /> {/* Hero Section */}
-      <ScrollReveal>
-        <section className="text-center max-w-4xl mx-auto">
-          {/* Main Headline */}
+    <section className="w-full bg-primary dark:bg-primary/10">
+      <div className="container px-4 md:px-6 py-16 md:py-24">
+        <ScrollReveal>
+          <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-6">
+            <span className="inline-flex items-center rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-1 text-xs font-medium text-primary-foreground dark:text-foreground">
+              Web Services
+            </span>
 
-          <AnimatedText
-            text="Looking for Web Services ?"
-            variant="heading"
-            className="text-3xl font-heading font-bold tracking-tighter sm:text-5xl gradient-text"
-            animation="wave"
-          />
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-primary-foreground dark:text-foreground text-balance">
+              Looking for Web Services?
+            </h2>
 
-          {/* Subheadline */}
-          <p className="text-xl md:text-2xl mb-8 font-sans leading-relaxed">
-            Reliable domains, hosting, and email services tailored for web
-            professionals.
-          </p>
+            <p className="text-lg text-primary-foreground/80 dark:text-muted-foreground leading-relaxed max-w-xl">
+              Reliable domains, hosting, and email services tailored for web professionals.
+            </p>
 
-          {/* Key Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="flex items-center justify-center gap-3 ">
-              <Shield className="w-6 h-6 text-[#E4335A]" />
-              <span className="font-medium">99.9% Uptime</span>
+            <div className="flex flex-wrap justify-center gap-6 mt-2">
+              {features.map((item) => (
+                <span key={item.label} className="flex items-center gap-2 text-sm text-primary-foreground/90 dark:text-muted-foreground">
+                  <item.icon className="h-4 w-4" />
+                  {item.label}
+                </span>
+              ))}
             </div>
-            <div className="flex items-center justify-center gap-3 ">
-              <Headphones className="w-6 h-6 text-[#E4335A]" />
-              <span className="font-medium">24/7 Support</span>
-            </div>
-            <div className="flex items-center justify-center gap-3 ">
-              <Globe className="w-6 h-6 text-[#E4335A]" />
-              <span className="font-medium">Easy Domain Management</span>
-            </div>
+
+            <Button
+              size="lg"
+              variant="secondary"
+              className="mt-2"
+              asChild
+            >
+              <Link href="https://web.shreshbiz.com/" target="_blank" className="flex items-center gap-2">
+                Explore Now
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
           </div>
+        </ScrollReveal>
 
-          {/* CTA Button */}
-          <Button
-            size="lg"
-            className="neumorphic-button-primary px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-200 hover:scale-105"
-            onClick={() => window.open("https://web.shreshbiz.com", "_blank")}
-          >
-            Explore Now
-          </Button>
-        </section>
-      </ScrollReveal>
-      {/* Social Proof Section */}
-      <ScrollReveal>
-        <section className="mt-20 text-center">
-          <p className="mb-8 font-bold">
-            Trusted by web professionals worldwide
-          </p>
-          <div className="flex flex-col md:flex-row justify-center items-center md:first-letter:gap-8 opacity-60">
-            <div className="text-2xl font-bold ">1,00+</div>
-            <div className=" ">Active Domains</div>
-            <div className="w-px h-8 bg-white/20"></div>
-            <div className="text-2xl font-bold ">99.9%</div>
-            <div className=" ">Uptime</div>
-            <div className="w-px h-8 bg-white/20"></div>
-            <div className="text-2xl font-bold ">24/7</div>
-            <div className=" ">Support</div>
+        <ScrollReveal>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-16 mt-12 pt-8 border-t border-primary-foreground/10">
+            {metrics.map((metric) => (
+              <div key={metric.label} className="flex flex-col items-center gap-1">
+                <span className="text-2xl font-heading font-bold text-primary-foreground dark:text-foreground">{metric.value}</span>
+                <span className="text-sm text-primary-foreground/70 dark:text-muted-foreground">{metric.label}</span>
+              </div>
+            ))}
           </div>
-        </section>
-      </ScrollReveal>
-    </div>
-  );
+        </ScrollReveal>
+      </div>
+    </section>
+  )
 }

@@ -2,18 +2,15 @@ import { FaqSection } from "@/components/sections/faq-section"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'FAQs',
-  description:
-    "FAQs page for Shresh Biz",
-  alternates: {
-    canonical: "/"
-  },
-  keywords:["Shresh Biz","Shresh Biz FAQs ","Digital Marketing Shresh biz", "shresh biz web dev"]
-};
+  title: "FAQ",
+  description: "Frequently asked questions about Shresh Biz services.",
+  alternates: { canonical: "/faq" },
+  keywords: ["Shresh Biz", "FAQ", "questions", "digital marketing", "web development"],
+}
 
-export default function ServicesPage() {
+export default function FaqPage() {
   return (
-    <main className="flex flex-col items-center relative">
+    <main className="pt-8">
       <FaqSection />
     </main>
   )

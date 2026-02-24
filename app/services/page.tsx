@@ -1,20 +1,16 @@
-
 import { ServicesSection } from "@/components/sections/features-section"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'Services',
-  description:
-    "Services page for Shresh Biz",
-  alternates: {
-    canonical: "/"
-  },
-  keywords:["Shresh Biz ","Shresh biz services", "shresh biz web dev","digital marketing"]
-};
+  title: "Services",
+  description: "Explore the services offered by Shresh Biz including web development, digital marketing, and more.",
+  alternates: { canonical: "/services" },
+  keywords: ["Shresh Biz", "services", "web development", "digital marketing"],
+}
 
 export default function ServicesPage() {
   return (
-    <main className="flex flex-col items-center relative">
+    <main className="pt-8">
       <ServicesSection />
     </main>
   )

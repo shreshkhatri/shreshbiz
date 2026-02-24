@@ -1,115 +1,85 @@
 "use client"
-import { Cctv, Globe, Briefcase, GraduationCap, Server } from "lucide-react"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Globe, Server, Briefcase, GraduationCap, Cctv, LifeBuoy } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { GlowingTiltCard } from "@/components/ui/glowing-tilt-card"
-import { ParallaxScroll } from "@/components/ui/parallax-scroll"
-import { AnimatedText } from "@/components/ui/animated-text"
-import { AnimatedBackground } from "@/components/ui/animated-background"
-import { ProgressCard } from "@/components/ui-library/cards/progress-card"
 
 const services = [
-    {
-      icon: <Globe className="h-10 w-10 text-blue-800" />,
-      title: "Web Application Development",
-      description: "Development of all types of web applications with all sort of backend functionalities.",
-      progress: 100,
-      borderClass: "border-glow-red",
-    },
-    {
-      icon: <Server className="h-10 w-10 text-blue-800" />,
-      title: "Domain Purchase & Web hosting",
-      description: "Need a web domain name for your business and secured web hosting service ? We are here to do it for you on your behalf.",
-      progress: 100,
-      borderClass: "border-glow-red",
-    },
-    {
-      icon: <Briefcase className="h-10 w-10 text-blue-800" />,
-      title: "Digital Marketing",
-      description: "Building social presence for businesses or startups, marketing media content creation and managing Meta business assets",
-      progress: 90,
-      borderClass: "border-glow-blue",
-    },
-    {
-      icon: <GraduationCap className="h-10 w-10 text-blue-800" />,
-      title: "eLearning System",
-      description: "Development of completely bespoke eLearning solutions development tailored to the need of school, universities and learning institutes",
-      progress: 95,
-      borderClass: "border-glow-yellow",
-    },
-    {
-      icon: <Cctv className="h-10 w-10 text-blue-800" />,
-      title: "CCTV Service set up",
-      description: "Need to secure your premises with CC(Closed Circuit) TV camera ? Experts at Shresh Biz are ready to provide you proper CCTV set up.",
-      progress: 95,
-      borderClass: "border-glow-yellow",
-    },
-    {
-      icon: <GraduationCap className="h-10 w-10 text-blue-800" />,
-      title: "Long Term Support (LTS)",
-      description: "Looking forward to receive continuous support from us for maintaneing your application system or any of your business needs ? We are ready to provide you the necessary support with the affordable and convient service plans.",
-      progress: 95,
-      borderClass: "border-glow-yellow",
-    }
-  ]
+  {
+    icon: Globe,
+    title: "Web Application Development",
+    description:
+      "Development of all types of web applications with full-stack backend functionalities tailored to your business needs.",
+  },
+  {
+    icon: Server,
+    title: "Domain Purchase & Web Hosting",
+    description:
+      "Need a web domain name for your business and secured web hosting service? We handle everything for you.",
+  },
+  {
+    icon: Briefcase,
+    title: "Digital Marketing",
+    description:
+      "Building social presence for businesses, marketing media content creation, and managing Meta business assets.",
+  },
+  {
+    icon: GraduationCap,
+    title: "eLearning Systems",
+    description:
+      "Completely bespoke eLearning solutions tailored to the needs of schools, universities, and learning institutes.",
+  },
+  {
+    icon: Cctv,
+    title: "CCTV Service Setup",
+    description:
+      "Need to secure your premises with CCTV cameras? Our experts provide professional CCTV installation and setup.",
+  },
+  {
+    icon: LifeBuoy,
+    title: "Long Term Support",
+    description:
+      "Continuous support for maintaining your application systems with affordable and convenient service plans.",
+  },
+]
 
 export function ServicesSection() {
-
-
   return (
-    <section id="services" className="relative w-full py-24 lg:py-32 bg-muted/30 overflow-hidden">
-      <AnimatedBackground variant="dots" color="rgba(220, 38, 38, 0.05)" />
-
-      <div className="container px-6 md:px-8">
+    <section id="services" className="w-full section-spacing">
+      <div className="container px-4 md:px-6">
         <ScrollReveal>
-          <div className="flex flex-col items-center justify-center space-y-6 text-center mb-12">
-            <div className="space-y-4">
-              <AnimatedText
-                text="Our Services"
-                variant="heading"
-                className="text-3xl font-heading font-bold tracking-tighter sm:text-5xl gradient-text"
-                animation="slide"
-              />
-              <AnimatedText
-                text="Our team at Shresh Biz are ready to provide the services to support you with the following business needs."
-                variant="paragraph"
-                className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 opacity-70"
-                animation="fade"
-                delay={0.3}
-              />
-            </div>
+          <div className="flex flex-col items-center text-center gap-4 mb-12">
+            <span className="inline-flex items-center rounded-full border border-border bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
+              What We Do
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-balance">
+              Our Services
+            </h2>
+            <p className="text-muted-foreground max-w-2xl leading-relaxed">
+              Our team at Shresh Biz is ready to provide services to support you with the following business needs.
+            </p>
           </div>
         </ScrollReveal>
 
-        <ParallaxScroll baseVelocity={0.1} direction="up" className="py-12">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((feature, index) => (
-              <ScrollReveal key={index} delay={index * 0.1}>
-                <GlowingTiltCard className="h-full cursor-default">
-                  <Card
-                    className={` border-none overflow-hidden group  ${feature.borderClass}`}
-                  >
-                    <CardHeader>
-                      <div className="p-2 rounded-xl w-fit bg-muted/50 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                        {feature.icon}
-                      </div>
-                      <CardTitle className="mt-4 tracking-tight relative">
-                        {feature.title}
-                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <CardDescription className="text-base opacity-90 transition-opacity duration-300 group-hover:opacity-100 border-none">
-                        {feature.description}
-                      </CardDescription>
-                    </CardContent>
-                  </Card>
-                </GlowingTiltCard>
-              </ScrollReveal>
-            ))}
-          </div>
-        </ParallaxScroll>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {services.map((service, index) => (
+            <ScrollReveal key={index} delay={index * 0.08}>
+              <Card className="h-full group border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300">
+                <CardHeader className="gap-4">
+                  <div className="flex items-center justify-center h-11 w-11 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                    <service.icon className="h-5 w-5" />
+                  </div>
+                  <CardTitle className="text-lg">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
     </section>
   )

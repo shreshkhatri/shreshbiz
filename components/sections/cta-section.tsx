@@ -1,60 +1,38 @@
 "use client"
+
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { AnimatedText } from "@/components/ui/animated-text"
-import { motion } from "framer-motion"
-import { AnimatedGradientBorder } from "@/components/ui/animated-gradient-border"
-import { GradientButton } from "@/components/ui-library/buttons/gradient-button"
-import { OutlineButton } from "@/components/ui-library/buttons/button-variants"
 
 export function CtaSection() {
   return (
-    <section id="cta" className="w-full py-24 lg:py-32 bg-gradient-to-br from-red-950/30 to-gray-950/30">
-      <div className="container px-6 md:px-8">
+    <section id="cta" className="w-full section-spacing">
+      <div className="container px-4 md:px-6">
         <ScrollReveal>
-          <div className="flex flex-col items-center justify-center space-y-6 text-center">
-            <div className="space-y-4">
-              <AnimatedText
-                text="Ready to build partnership with us?"
-                variant="heading"
-                className="text-3xl font-heading font-bold tracking-tighter sm:text-5xl gradient-text"
-                animation="wave"
-              />
-              <AnimatedText
-                text="Drop us a message today and we will get back to you at the earliest."
-                variant="paragraph"
-                className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 opacity-70"
-                animation="fade"
-                delay={0.3}
-              />
-            </div>
-            <motion.div
-              className="flex flex-col gap-6 sm:flex-row sm:gap-6 mt-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              <GradientButton
-                glowAmount={5}
-                size="lg"
-                className="px-8 py-3"
-                gradientFrom="from-blue-900"
-                gradientTo="to-blue-950"
-                asChild
-              >
-                <Link href="#pricing" className="flex items-center">
-                  Send Message
-                  <motion.span
-                    className="ml-2 inline-block"
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ repeat: Number.POSITIVE_INFINITY, repeatDelay: 2, duration: 1 }}
-                  >
+          <div className="relative rounded-2xl bg-primary dark:bg-primary/10 px-6 py-16 md:px-16 md:py-20 text-center overflow-hidden">
+            {/* Background accent */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,hsl(var(--primary-foreground)/0.05),transparent_60%)]" />
+
+            <div className="relative flex flex-col items-center gap-6 max-w-2xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-primary-foreground dark:text-foreground text-balance">
+                Ready to Build Partnership With Us?
+              </h2>
+              <p className="text-lg text-primary-foreground/80 dark:text-muted-foreground leading-relaxed">
+                Drop us a message today and we will get back to you at the earliest.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 mt-2">
+                <Button size="lg" variant="secondary" asChild>
+                  <Link href="/send-message" className="flex items-center gap-2">
+                    Send Message
                     <ArrowRight className="h-4 w-4" />
-                  </motion.span>
-                </Link>
-              </GradientButton>
-            </motion.div>
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 dark:border-border dark:text-foreground dark:hover:bg-accent" asChild>
+                  <Link href="/contact">Contact Info</Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </ScrollReveal>
       </div>

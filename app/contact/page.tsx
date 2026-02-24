@@ -1,20 +1,16 @@
-
 import ContactPage from "@/components/contact"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'Contact',
-  description:
-    "Contact details page for Shresh Biz",
-  alternates: {
-    canonical: "/"
-  },
-  keywords:["Shresh Biz ","Shresh Biz Contact","Digital Marketing Shresh biz", "shresh biz web dev"]
-};
+  title: "Contact",
+  description: "Contact Shresh Biz for inquiries, collaborations, or support.",
+  alternates: { canonical: "/contact" },
+  keywords: ["Shresh Biz", "contact", "Kathmandu IT", "digital marketing"],
+}
 
-export default function CareerPage() {
+export default function ContactRoute() {
   return (
-    <main className="flex flex-col items-center relative">
+    <main>
       <ContactPage />
     </main>
   )

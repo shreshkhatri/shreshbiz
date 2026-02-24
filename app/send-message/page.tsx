@@ -1,19 +1,16 @@
-import SendMessagePage from "@/components/send-message";
+import SendMessagePage from "@/components/send-message"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'Send Message',
-  description:
-    "Send Message to Shresh Biz",
-  alternates: {
-    canonical: "/"
-  },
-  keywords:["Shresh Biz","Shresh Biz Pricing ","Digital Marketing Shresh biz", "shresh biz web dev", "Shresh Biz send message","send message"]
-};
+  title: "Send Message",
+  description: "Send a message to Shresh Biz.",
+  alternates: { canonical: "/send-message" },
+  keywords: ["Shresh Biz", "message", "contact"],
+}
 
-export default function ServicesPage() {
+export default function SendMessageRoute() {
   return (
-    <main className="flex flex-col items-center relative">
+    <main>
       <SendMessagePage />
     </main>
   )

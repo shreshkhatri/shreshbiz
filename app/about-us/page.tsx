@@ -2,18 +2,15 @@ import AboutUsPage from "@/components/aboutus"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description:
-    "About the company Shresh Biz",
-  alternates: {
-    canonical: "/"
-  },
-  keywords:["company details","Shresh Biz about","Shresh Biz company","Shresh Biz","Shresh Biz Career ","Shresh Biz jobs","Shresh Biz Contact","Digital Marketing Shresh biz", "shresh biz web dev"]
-};
+  title: "About Us",
+  description: "Learn about Shresh Biz, an IT and digital solutions company based in Kathmandu, Nepal.",
+  alternates: { canonical: "/about-us" },
+  keywords: ["Shresh Biz", "about", "IT company Nepal", "digital solutions Kathmandu"],
+}
 
-export default function CareerPage() {
+export default function AboutPage() {
   return (
-    <main className="flex flex-col items-center relative">
+    <main>
       <AboutUsPage />
     </main>
   )

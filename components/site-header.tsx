@@ -1,112 +1,105 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { List, X } from "lucide-react";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { ModeToggle } from "./mode-toggle";
-import { Icons } from "@/components/icons";
-import { useScrollPosition } from "@/hooks/use-scroll-position";
+import * as React from "react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { AnimatePresence, motion } from "framer-motion"
+import { Menu, X, ArrowRight } from "lucide-react"
+import Image from "next/image"
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import { ModeToggle } from "./mode-toggle"
 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
-  { name: "Testimonials", href: "/testimonials" },
   { name: "Pricing", href: "/pricing" },
-  { name: "Blog", href: "/blog" },
-  { name: "FAQ", href: "/faq" },
-];
+  { name: "About", href: "/about-us" },
+  { name: "Careers", href: "/careers" },
+  { name: "Contact", href: "/contact" },
+]
 
 export function SiteHeader() {
-  const pathname = usePathname();
-  const scrollPosition = useScrollPosition();
-  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const pathname = usePathname()
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
+  const [scrolled, setScrolled] = React.useState(false)
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-  };
+  React.useEffect(() => {
+    setMobileMenuOpen(false)
+  }, [pathname])
 
   return (
     <header
       className={cn(
-        "fixed top-0 z-30 w-full transition-all duration-300 bg-background/90 border-b border-border/40"
+        "fixed top-0 z-50 w-full transition-all duration-300",
+        scrolled
+          ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
+          : "bg-background/80 backdrop-blur-sm"
       )}
     >
-      <div className="container px-4 md:px-6 flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2 z-10">
+      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/logo.svg" // logo path in public folder
-            alt="Shresh Biz Company Logo"
-            width={150}
-            height={50}
+            src="/logo.svg"
+            alt="Shresh Biz"
+            width={120}
+            height={40}
             priority
+            className="h-8 w-auto"
           />
         </Link>
 
-        {/* Desktop Navigation - Hidden on mobile */}
-        <nav className="hidden md:flex items-center space-x-1 lg:space-x-6">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
-            >
-              {item.name}
-              <span className="absolute inset-x-0 bottom-0 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200"></span>
-            </Link>
-          ))}
+        {/* Desktop Nav */}
+        <nav className="hidden lg:flex items-center gap-1">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  "px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                  isActive
+                    ? "text-primary bg-primary/5"
+                    : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                )}
+              >
+                {item.name}
+              </Link>
+            )
+          })}
         </nav>
 
-        <div className="flex items-center space-x-4">
+        {/* Right side */}
+        <div className="flex items-center gap-3">
           <ModeToggle />
 
-          {/* Desktop CTA Buttons - Hidden on mobile */}
-          <div className="hidden md:flex items-center space-x-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="neumorphic-button"
-              asChild
-            >
+          <div className="hidden lg:flex items-center gap-2">
+            <Button variant="ghost" size="sm" asChild>
               <Link href="/auth/signin">Sign in</Link>
             </Button>
-            <Button size="sm" className="neumorphic-button-primary" asChild>
-              <Link href="https://web.shreshbiz.com/" target="_blank">
+            <Button size="sm" asChild>
+              <Link href="https://web.shreshbiz.com/" target="_blank" className="flex items-center gap-1">
                 Get Started
-                <motion.div
-                  className="ml-1"
-                  animate={{ x: [0, 3, 0] }}
-                  transition={{
-                    repeat: Number.POSITIVE_INFINITY,
-                    repeatDelay: 3,
-                    duration: 0.8,
-                  }}
-                >
-                  →
-                </motion.div>
+                <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </Button>
           </div>
 
-          {/* Mobile Menu Button - Only visible on mobile */}
+          {/* Mobile menu toggle */}
           <button
-            className="md:hidden flex items-center justify-center p-2 rounded-md bg-background/90 border border-border/40 shadow-sm"
-            onClick={toggleMobileMenu}
+            className="lg:hidden flex items-center justify-center h-9 w-9 rounded-md border border-border hover:bg-accent transition-colors"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? (
-              <X className="text-foreground h-5 w-5" />
-            ) : (
-              <List className="text-foreground h-5 w-5" />
-            )}
+            {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
         </div>
       </div>
@@ -115,78 +108,44 @@ export function SiteHeader() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-background/50 backdrop-blur-sm md:hidden"
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            onClick={closeMobileMenu}
+            className="lg:hidden overflow-hidden border-b border-border bg-background"
           >
-            <motion.div
-              className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-background shadow-xl border-l border-border"
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            >
-              <div className="flex items-center justify-between p-4 border-b border-border">
-                <Link
-                  href="/"
-                  className="flex items-center space-x-2"
-                  onClick={closeMobileMenu}
-                >
-                  <Image
-                    src="/logo.svg" // logo path in public folder
-                    alt="Shresh Biz Company Logo"
-                    width={150}
-                    height={50}
-                    priority
-                  />
-                </Link>
-                <button
-                  onClick={closeMobileMenu}
-                  className="p-2 rounded-full hover:bg-muted transition-colors"
-                  aria-label="Close menu"
-                >
-                  <X className="text-foreground h-5 w-5" />
-                </button>
+            <nav className="container px-4 py-4 flex flex-col gap-1">
+              {navItems.map((item) => {
+                const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={cn(
+                      "px-4 py-2.5 text-sm font-medium rounded-md transition-colors",
+                      isActive
+                        ? "text-primary bg-primary/5"
+                        : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                    )}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              })}
+              <div className="flex gap-2 mt-3 pt-3 border-t border-border">
+                <Button variant="outline" size="sm" className="flex-1" asChild>
+                  <Link href="/auth/signin">Sign in</Link>
+                </Button>
+                <Button size="sm" className="flex-1" asChild>
+                  <Link href="https://web.shreshbiz.com/" target="_blank">
+                    Get Started
+                  </Link>
+                </Button>
               </div>
-
-              <div className="py-4 px-2">
-                <nav className="flex flex-col space-y-1">
-                  {navItems.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="px-4 py-3 text-base font-medium text-foreground hover:bg-muted rounded-md transition-colors"
-                      onClick={(e) => {
-                        closeMobileMenu();
-                      }}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </nav>
-              </div>
-
-              <div className="mt-auto p-4 border-t border-border">
-                <div className="grid grid-cols-2 gap-3">
-                  <Button variant="outline" className="w-full" asChild>
-                    <Link href="/auth/signin" onClick={closeMobileMenu}>
-                      Sign in
-                    </Link>
-                  </Button>
-                  <Button className="w-full neumorphic-button-primary" asChild>
-                    <Link href="https://web.shreshbiz.com/" target="_blank" onClick={closeMobileMenu}>
-                      Get Started
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>
     </header>
-  );
+  )
 }

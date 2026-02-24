@@ -2,18 +2,15 @@ import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'Testimonials',
-  description:
-    "Testimonials page for Shresh Biz",
-  alternates: {
-    canonical: "/"
-  },
-  keywords:["Shresh Biz ","Digital Marketing Shresh biz", "shresh biz web dev", "shresh biz testimonials"]
-};
+  title: "Testimonials",
+  description: "Hear what our clients say about Shresh Biz services.",
+  alternates: { canonical: "/testimonials" },
+  keywords: ["Shresh Biz", "testimonials", "client reviews"],
+}
 
-export default function ServicesPage() {
+export default function TestimonialsPage() {
   return (
-    <main className="flex flex-col items-center relative">
+    <main className="pt-8">
       <TestimonialsSection />
     </main>
   )

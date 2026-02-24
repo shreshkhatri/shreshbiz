@@ -1,20 +1,16 @@
-import Pricing from "@/components/pricing";
-import { FaqSection } from "@/components/sections/faq-section"
+import Pricing from "@/components/pricing"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'Pricing',
-  description:
-    "Pricing for services at Shresh Biz",
-  alternates: {
-    canonical: "/"
-  },
-  keywords:["Shresh Biz","Shresh Biz Pricing ","Digital Marketing Shresh biz", "shresh biz web dev"]
-};
+  title: "Pricing",
+  description: "View pricing for Shresh Biz services including digital marketing, web development, and hosting.",
+  alternates: { canonical: "/pricing" },
+  keywords: ["Shresh Biz", "pricing", "web development cost", "digital marketing plans"],
+}
 
-export default function ServicesPage() {
+export default function PricingPage() {
   return (
-    <main className="flex flex-col items-center relative">
+    <main>
       <Pricing />
     </main>
   )

@@ -2,18 +2,15 @@ import WebDev from "@/components/web-dev"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'Web Dev',
-  description:
-    "Wev Dev page for Shresh Biz",
-  alternates: {
-    canonical: "/"
-  },
-  keywords:["Shresh Biz services","Digital Marketing Shresh biz", "shresh biz web dev"]
-};
+  title: "Web Development",
+  description: "Web development services by Shresh Biz.",
+  alternates: { canonical: "/services/web-dev" },
+  keywords: ["Shresh Biz", "web development", "custom web apps"],
+}
 
-export default function ServicesPage() {
+export default function WebDevPage() {
   return (
-    <main className="flex flex-col items-center relative">
+    <main>
       <WebDev />
     </main>
   )

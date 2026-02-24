@@ -9,38 +9,30 @@ export function ScrollToTopButton() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 100) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
+      setIsVisible(window.scrollY > 300)
     }
-
-    window.addEventListener("scroll", toggleVisibility)
+    window.addEventListener("scroll", toggleVisibility, { passive: true })
     return () => window.removeEventListener("scroll", toggleVisibility)
   }, [])
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    })
+    window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
   return (
     <AnimatePresence>
       {isVisible && (
         <motion.button
-          className="fixed bottom-6 right-6 p-3 rounded-full bg-primary/10 border border-primary/20 text-primary shadow-lg hover:bg-primary/20 transition-colors z-50 neumorphic-button-floating"
+          className="fixed bottom-6 right-6 flex items-center justify-center h-10 w-10 rounded-lg bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 transition-colors z-50"
           onClick={scrollToTop}
-          initial={{ opacity: 0, scale: 0.8, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.8, y: 20 }}
-          whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
-          whileTap={{ scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           aria-label="Scroll to top"
         >
-          <ArrowUp className="h-5 w-5" />
+          <ArrowUp className="h-4 w-4" />
         </motion.button>
       )}
     </AnimatePresence>
